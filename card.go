@@ -1,4 +1,5 @@
-package deck // import "gophercise/deck"
+package deck
+
 import (
 	"fmt"
 	"math/rand"
