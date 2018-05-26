@@ -39,6 +39,12 @@ type Card struct {
 Card represents a playing card
 
 ```go
+func New(opts ...func([]Card) []Card) []Card
+```
+New will return a new deck of cards as []Card, it takes any number of functional arguments that can modify the deck
+
+
+```go
 func DefaultSort(deck []Card) []Card
 ```
 
@@ -49,11 +55,6 @@ func Merge(decks ...[]Card) []Card
 ```
 
 Merge Composes a single deck from any number of decks
-
-```go
-func New(opts ...func([]Card) []Card) []Card
-```
-New will return a new deck of cards as []Card
 
 ```go
 func Shuffle(deck []Card) []Card

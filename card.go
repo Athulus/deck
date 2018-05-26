@@ -57,7 +57,7 @@ func (c Card) value() int {
 	return int(c.Suit)*13 + int(c.Rank)
 }
 
-// New will return a new deck of cards as []Card
+// New will return a new deck of cards as []Card, it takes any number of functional arguments that can modify the deck
 func New(opts ...func([]Card) []Card) []Card {
 	deck := make([]Card, 52)
 	for i := range deck {

@@ -95,7 +95,7 @@ func TestJokers(t *testing.T) {
 			got := New(Jokers(tt.args))
 			numberOfJokers := 0
 			for _, c := range got {
-				if c.Suit == joker {
+				if c.Suit == Joker {
 					numberOfJokers++
 				}
 			}
@@ -108,14 +108,14 @@ func TestJokers(t *testing.T) {
 
 func TestFilter(t *testing.T) {
 	filter := func(c Card) bool {
-		if c.Suit != hearts {
+		if c.Suit != Hearts {
 			return false
 		}
 		return true
 	}
 	testDeck := New(Filter(filter))
 	for _, c := range testDeck {
-		if c.Suit == hearts {
+		if c.Suit == Hearts {
 			t.Error("found a heart where there should be none")
 		}
 	}
