@@ -16,28 +16,28 @@ type Suit uint8
 type Rank uint8
 
 const (
-	spades Suit = iota
-	hearts
-	diamonds
-	clubs
-	joker
+	Spades Suit = iota
+	Hearts
+	Diamonds
+	Clubs
+	Joker
 )
 
 const (
 	_ Rank = iota
-	ace
-	two
-	three
-	four
-	five
-	six
-	seven
-	eight
-	nine
-	ten
-	jack
-	queen
-	king
+	Ace
+	Two
+	Three
+	Four
+	Five
+	Six
+	Seven
+	Eight
+	Nine
+	Ten
+	Jack
+	Queen
+	King
 )
 
 //Card represents a playing card
@@ -47,7 +47,7 @@ type Card struct {
 }
 
 func (c Card) String() string {
-	if c.Suit == joker {
+	if c.Suit == Joker {
 		return c.Suit.String()
 	}
 	return fmt.Sprintf("%s of %s", c.Rank.String(), c.Suit.String())
@@ -108,7 +108,7 @@ func Shuffle(deck []Card) []Card {
 func Jokers(n int) func([]Card) []Card {
 	return func(deck []Card) []Card {
 		for i := 0; i < n; i++ {
-			deck = append(deck, Card{Suit: joker})
+			deck = append(deck, Card{Suit: Joker})
 		}
 		return deck
 	}
